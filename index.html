@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вожатая Алина - 1000 причин выбрать её</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f9ff;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px 0;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-weight: 300;
+            margin: 0;
+            font-size: 2.2em;
+        }
+        
+        .subtitle {
+            font-style: italic;
+            opacity: 0.9;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 30px 0;
+            background: #000;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .reasons {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin: 30px 0;
+        }
+        
+        .reasons h2 {
+            text-align: center;
+            color: #2575fc;
+            margin-bottom: 30px;
+            font-size: 1.8em;
+        }
+        
+        .reason-list {
+            column-count: 2;
+            column-gap: 30px;
+        }
+        
+        .reason-item {
+            padding: 8px 0;
+            break-inside: avoid;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.95em;
+        }
+        
+        .reason-item:nth-child(10n) {
+            color: #2575fc;
+            font-weight: bold;
+        }
+        
+        .hidden-message {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            z-index: 1000;
+            text-align: center;
+            max-width: 80%;
+            border: 3px solid #6a11cb;
+        }
+        
+        .hidden-message h3 {
+            color: #6a11cb;
+            margin-top: 0;
+            font-size: 1.8em;
+        }
+        
+        .close-btn {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 1em;
+            transition: transform 0.2s;
+        }
+        
+        .close-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px 0;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 600px) {
+            .reason-list {
+                column-count: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Алина - идеальная вожатая</h1>
+        <p class="subtitle">1000 причин почему она лучшая</p>
+    </header>
+    
+    <div class="video-container">
+        <!-- Замени сыллку на визитку -->
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    
+    <div class="reasons">
+        <h2>1000 причин выбрать Алину</h2>
+        <div class="reason-list" id="reasonList">
+            <!-- Список будет сгенерирован JavaScript -->
+        </div>
+    </div>
+    
+    <div class="hidden-message" id="hiddenMessage">
+        <h3>Сделала 7 комната!</h3>
+        <p>Вы должны её выбрать!
+        skebob</p>
+        <button class="close-btn" onclick="closeMessage()">Закрыть</button>
+    </div>
+    
+    <footer>
+        © 2023 Вожатая Алина. Лучшая вожатая всех времён.
+    </footer>
+
+    <script>
+        // Реальные 1000 причин (сокращенный список для примера)
+        const realReasons = [
+            "1. Всегда пунктуальна",
+            "2. Никогда не опаздывает",
+            "3. Внимательна к детям",
+            "4. Умеет слушать",
+            "5. Всегда находит нужные слова",
+            "6. Ответственная",
+            "7. Дисциплинированная",
+            "8. Добрая",
+            "9. Отзывчивая",
+            "10. Всегда в хорошем настроении",
+            "11. Умеет успокоить ребёнка",
+            "12. Профессионал своего дела",
+            "13. Имеет педагогическое образование",
+            "14. Любит свою работу",
+            "15. Дети её обожают",
+            "16. Родители ей доверяют",
+            "17. Всегда выглядит опрятно",
+            "18. Говорит спокойным голосом",
+            "19. Никогда не повышает голос",
+            "20. Умеет объяснять понятно",
+            "21. Всегда справедлива",
+            "22. Никогда не выделяет любимчиков",
+            "23. Внимательна к мелочам",
+            "24. Заботится о безопасности",
+            "25. Следит за здоровьем детей",
+            "26. Знает всех по именам",
+            "27. Помнит особенности каждого",
+            "28. Всегда готова помочь",
+            "29. Никогда не отказывает в просьбе",
+            "30. Умеет хранить секреты",
+            "31. Никогда не сплетничает",
+            "32. Всегда тактична",
+            "33. Уважает детей",
+            "34. Требовательная, но справедливая",
+            "35. Умеет мотивировать",
+            "36. Вселяет уверенность",
+            "37. Помогает раскрыть таланты",
+            "38. Замечает успехи каждого",
+            "39. Никогда не сравнивает детей",
+            "40. Создаёт комфортную атмосферу",
+            "41. Поддерживает в трудную минуту",
+            "42. Умеет разрядить обстановку",
+            "43. Всегда находит время для каждого",
+            "44. Никогда не торопится",
+            "45. Все делает обстоятельно",
+            "46. Ведёт документацию аккуратно",
+            "47. Соблюдает все правила",
+            "48. Знает все инструкции",
+            "49. Всегда подготовлена",
+            "50. Ничего не забывает",
+            "51. Имеет план на каждый день",
+            "52. Учитывает пожелания детей",
+            "53. Гибкая в подходе",
+            "54. Умеет адаптироваться",
+            "55. Всегда сохраняет спокойствие",
+            "56. Не конфликтная",
+            "57. Умеет договариваться",
+            "58. Находит компромиссы",
+            "59. Учит детей взаимопониманию",
+            "60. Развивает командный дух",
+            "61. Создаёт дружескую атмосферу",
+            "62. Пресекает любые издевательства",
+            "63. Следит за психологическим климатом",
+            "64. Учит уважению",
+            "65. Подаёт личный пример",
+            "66. Всегда вежлива",
+            "67. Культурная речь",
+            "68. Хорошие манеры",
+            "69. Никогда не грубит",
+            "70. Всегда здоровается",
+            "71. Улыбается детям",
+            "72. Создаёт позитивный настрой",
+            "73. Оптимист по натуре",
+            "74. Видит хорошее в каждом",
+            "75. Не допускает уныния",
+            "76. Верит в каждого ребёнка",
+            "77. Вселяет надежду",
+            "78. Поддерживает инициативу",
+            "79. Развивает самостоятельность",
+            "80. Учит ответственности",
+            "81. Помогает стать лучше",
+            "82. Никогда не унижает",
+            "83. Критикует конструктивно",
+            "84. Хвалит заслуженно",
+            "85. Знает меру во всём",
+            "86. Баланс строгости и доброты",
+            "87. Интуитивно чувствует детей",
+            "88. Предугадывает проблемы",
+            "89. Профилактирует конфликты",
+            "90. Всегда начеку",
+            "91. Никогда не теряет бдительности",
+            "92. Следит за порядком",
+            "93. Приучает к чистоте",
+            "94. Учит самоорганизации",
+            "95. Развивает полезные привычки",
+            "96. Вдохновляет личным примером",
+            "97. Имеет авторитет",
+            "98. Дети её уважают",
+            "99. Коллеги ценят",
+            "100. Руководство хвалит",
+            // Продолжение до 1000...
+            "1000. Просто потому что она Алина!"
+        ];
+
+        // Дублируем причины чтобы получить 1000 пунктов
+        const allReasons = [];
+        const repeats = Math.ceil(1000 / realReasons.length);
+        
+        for (let i = 0; i < repeats; i++) {
+            allReasons.push(...realReasons.map((r, idx) => 
+                (i * realReasons.length + idx + 1) + r.substring(r.indexOf('.'))));
+        }
+        
+        allReasons.length = 1000; // Оставляем ровно 1000
+        
+        // Заполняем список
+        const reasonList = document.getElementById('reasonList');
+        allReasons.forEach(reason => {
+            const reasonItem = document.createElement('div');
+            reasonItem.className = 'reason-item';
+            reasonItem.textContent = reason;
+            reasonList.appendChild(reasonItem);
+        });
+        
+        // Проверка посещений для секретного сообщения
+        let visitCount = localStorage.getItem('visitCount') || 0;
+        visitCount++;
+        localStorage.setItem('visitCount', visitCount);
+        
+        if (visitCount >= 3) {
+            setTimeout(() => {
+                document.getElementById('hiddenMessage').style.display = 'block';
+            }, 3000);
+        }
+        
+        function closeMessage() {
+            document.getElementById('hiddenMessage').style.display = 'none';
+            localStorage.setItem('visitCount', 0);
+        }
+    </script>
+</body>
+</html>
